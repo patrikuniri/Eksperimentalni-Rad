@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  nginx-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "8080:80"
+    networks:
+      - webnet
+
+  haproxy-lb:
+    build:
+      context: .
+      dockerfile: Dockerfile.haproxy
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    ports:
+      - "80:80"
+    networks:
+      - webnet
+
+networks:
+  webnet:
