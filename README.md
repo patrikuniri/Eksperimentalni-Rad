@@ -1,6 +1,6 @@
 Instructions how to run benchmark
 
-1. Open a in the directory containing the docker-compose.yml
+1. Open terminal in the directory containing the docker-compose.yml
 2. Run the following command to start docker:
 
 	docker-compose up -d
